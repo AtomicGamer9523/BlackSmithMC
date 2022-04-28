@@ -169,6 +169,9 @@ version = "0.1.0"
 [[package]]
 name = "blacksmithmc-core"
 version = "0.1.0"
+dependencies = [
+ "blacksmithmc-commands",
+]
 
 [[package]]
 name = "block-buffer"

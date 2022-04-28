@@ -1,17 +1,15 @@
+use blacksmithmc_commands::Blacksmithcommands;
 pub struct Blacksmith {
-    initialized: bool
+    initialized: bool,
 }
 
 impl Blacksmith {
     pub fn new() -> Self {
-        // let bsmcc = Blacksmithcommands::new();
-        // bsmcc.print();
-        Self {
-            initialized: true
-        }
+        Self { initialized: true }
     }
 
     pub fn print(&mut self) -> String {
-        String::from(format!("BlackSmithMC is: {}", self.initialized))
+        let mut bsmcc = Blacksmithcommands::new();
+        String::from(format!("BlackSmithMC is: {}\n{}", self.initialized, bsmcc.print()))
     }
 }

@@ -3,5 +3,8 @@ name = "blacksmithmc-core"
 version = "0.1.0"
 edition = "2018"
 
+[dependencies]
+blacksmithmc-commands = { path = "../commands", package = "blacksmithmc-commands" }
+
 [lib]
 path = "src/lib.rs"
