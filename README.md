@@ -1,7 +1,5 @@
 # BlackSmithMC
 
-[![Release](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/release.yml/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/release.yml)
-
 A Minecraft server implementation written in Rust.
 
 ### Status
@@ -45,15 +43,15 @@ until the players start to spread out. In the 1,000,000 entities test, it uses 4
 
 ### Running
 
-We offer precompiled binaries for Windows, Linux, and macOS at [GitHub Actions](https://github.com/BlackSmithMC-rs/BlackSmithMC/actions/workflows/main.yml).
+We offer precompiled binaries for Windows, Linux, and macOS at [build](./build/).
 NB: Do **NOT** use github releases, they are majorly outdated
 
 To run BlackSmithMC:
 
 * Extract the downloaded archive.
 * Run the binary.
-  * On Linux and macOS: `./feather-server` in the server directory
-  * On Windows: double-click `feather-server.exe`
+  * On Linux and macOS: `./server` in the server directory
+  * On Windows: double-click `server.exe`
   
 The server will create a configuration file (`config.toml`) which you can modify.
 
