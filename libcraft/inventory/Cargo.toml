@@ -1,0 +1,8 @@
+[package]
+name = "libcraft-inventory"
+version = "0.1.0"
+authors = ["Tracreed <davidalasow@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+libcraft-items = { path = "../items" }

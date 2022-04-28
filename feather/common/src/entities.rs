@@ -1,0 +1,239 @@
+// This file is @generated. Please do not edit.
+use libcraft::EntityKind;
+use quill::components::{EntityUuid, OnGround};
+use uuid::Uuid;
+use vane::EntityBuilder;
+#[doc = "Adds default components shared between all entities."]
+fn build_default(builder: &mut EntityBuilder) {
+    builder.add(EntityUuid(Uuid::new_v4())).add(OnGround(true));
+}
+pub mod area_effect_cloud;
+pub mod armor_stand;
+pub mod arrow;
+pub mod axolotl;
+pub mod bat;
+pub mod bee;
+pub mod blaze;
+pub mod boat;
+pub mod cat;
+pub mod cave_spider;
+pub mod chest_minecart;
+pub mod chicken;
+pub mod cod;
+pub mod command_block_minecart;
+pub mod cow;
+pub mod creeper;
+pub mod dolphin;
+pub mod donkey;
+pub mod dragon_fireball;
+pub mod drowned;
+pub mod egg;
+pub mod elder_guardian;
+pub mod end_crystal;
+pub mod ender_dragon;
+pub mod ender_pearl;
+pub mod enderman;
+pub mod endermite;
+pub mod evoker;
+pub mod evoker_fangs;
+pub mod experience_bottle;
+pub mod experience_orb;
+pub mod eye_of_ender;
+pub mod falling_block;
+pub mod fireball;
+pub mod firework_rocket;
+pub mod fishing_bobber;
+pub mod fox;
+pub mod furnace_minecart;
+pub mod ghast;
+pub mod giant;
+pub mod glow_item_frame;
+pub mod glow_squid;
+pub mod goat;
+pub mod guardian;
+pub mod hoglin;
+pub mod hopper_minecart;
+pub mod horse;
+pub mod husk;
+pub mod illusioner;
+pub mod iron_golem;
+pub mod item;
+pub mod item_frame;
+pub mod leash_knot;
+pub mod lightning_bolt;
+pub mod llama;
+pub mod llama_spit;
+pub mod magma_cube;
+pub mod marker;
+pub mod minecart;
+pub mod mooshroom;
+pub mod mule;
+pub mod ocelot;
+pub mod painting;
+pub mod panda;
+pub mod parrot;
+pub mod phantom;
+pub mod pig;
+pub mod piglin;
+pub mod piglin_brute;
+pub mod pillager;
+pub mod player;
+pub mod polar_bear;
+pub mod potion;
+pub mod pufferfish;
+pub mod rabbit;
+pub mod ravager;
+pub mod salmon;
+pub mod sheep;
+pub mod shulker;
+pub mod shulker_bullet;
+pub mod silverfish;
+pub mod skeleton;
+pub mod skeleton_horse;
+pub mod slime;
+pub mod small_fireball;
+pub mod snow_golem;
+pub mod snowball;
+pub mod spawner_minecart;
+pub mod spectral_arrow;
+pub mod spider;
+pub mod squid;
+pub mod stray;
+pub mod strider;
+pub mod tnt;
+pub mod tnt_minecart;
+pub mod trader_llama;
+pub mod trident;
+pub mod tropical_fish;
+pub mod turtle;
+pub mod vex;
+pub mod villager;
+pub mod vindicator;
+pub mod wandering_trader;
+pub mod witch;
+pub mod wither;
+pub mod wither_skeleton;
+pub mod wither_skull;
+pub mod wolf;
+pub mod zoglin;
+pub mod zombie;
+pub mod zombie_horse;
+pub mod zombie_villager;
+pub mod zombified_piglin;
+pub fn add_entity_components(builder: &mut EntityBuilder, kind: EntityKind) {
+    match kind {
+        EntityKind::AreaEffectCloud => area_effect_cloud::build_default(builder),
+        EntityKind::ArmorStand => armor_stand::build_default(builder),
+        EntityKind::Arrow => arrow::build_default(builder),
+        EntityKind::Axolotl => axolotl::build_default(builder),
+        EntityKind::Bat => bat::build_default(builder),
+        EntityKind::Bee => bee::build_default(builder),
+        EntityKind::Blaze => blaze::build_default(builder),
+        EntityKind::Boat => boat::build_default(builder),
+        EntityKind::Cat => cat::build_default(builder),
+        EntityKind::CaveSpider => cave_spider::build_default(builder),
+        EntityKind::Chicken => chicken::build_default(builder),
+        EntityKind::Cod => cod::build_default(builder),
+        EntityKind::Cow => cow::build_default(builder),
+        EntityKind::Creeper => creeper::build_default(builder),
+        EntityKind::Dolphin => dolphin::build_default(builder),
+        EntityKind::Donkey => donkey::build_default(builder),
+        EntityKind::DragonFireball => dragon_fireball::build_default(builder),
+        EntityKind::Drowned => drowned::build_default(builder),
+        EntityKind::ElderGuardian => elder_guardian::build_default(builder),
+        EntityKind::EndCrystal => end_crystal::build_default(builder),
+        EntityKind::EnderDragon => ender_dragon::build_default(builder),
+        EntityKind::Enderman => enderman::build_default(builder),
+        EntityKind::Endermite => endermite::build_default(builder),
+        EntityKind::Evoker => evoker::build_default(builder),
+        EntityKind::EvokerFangs => evoker_fangs::build_default(builder),
+        EntityKind::ExperienceOrb => experience_orb::build_default(builder),
+        EntityKind::EyeOfEnder => eye_of_ender::build_default(builder),
+        EntityKind::FallingBlock => falling_block::build_default(builder),
+        EntityKind::FireworkRocket => firework_rocket::build_default(builder),
+        EntityKind::Fox => fox::build_default(builder),
+        EntityKind::Ghast => ghast::build_default(builder),
+        EntityKind::Giant => giant::build_default(builder),
+        EntityKind::GlowItemFrame => glow_item_frame::build_default(builder),
+        EntityKind::GlowSquid => glow_squid::build_default(builder),
+        EntityKind::Goat => goat::build_default(builder),
+        EntityKind::Guardian => guardian::build_default(builder),
+        EntityKind::Hoglin => hoglin::build_default(builder),
+        EntityKind::Horse => horse::build_default(builder),
+        EntityKind::Husk => husk::build_default(builder),
+        EntityKind::Illusioner => illusioner::build_default(builder),
+        EntityKind::IronGolem => iron_golem::build_default(builder),
+        EntityKind::Item => item::build_default(builder),
+        EntityKind::ItemFrame => item_frame::build_default(builder),
+        EntityKind::Fireball => fireball::build_default(builder),
+        EntityKind::LeashKnot => leash_knot::build_default(builder),
+        EntityKind::LightningBolt => lightning_bolt::build_default(builder),
+        EntityKind::Llama => llama::build_default(builder),
+        EntityKind::LlamaSpit => llama_spit::build_default(builder),
+        EntityKind::MagmaCube => magma_cube::build_default(builder),
+        EntityKind::Marker => marker::build_default(builder),
+        EntityKind::Minecart => minecart::build_default(builder),
+        EntityKind::ChestMinecart => chest_minecart::build_default(builder),
+        EntityKind::CommandBlockMinecart => command_block_minecart::build_default(builder),
+        EntityKind::FurnaceMinecart => furnace_minecart::build_default(builder),
+        EntityKind::HopperMinecart => hopper_minecart::build_default(builder),
+        EntityKind::SpawnerMinecart => spawner_minecart::build_default(builder),
+        EntityKind::TntMinecart => tnt_minecart::build_default(builder),
+        EntityKind::Mule => mule::build_default(builder),
+        EntityKind::Mooshroom => mooshroom::build_default(builder),
+        EntityKind::Ocelot => ocelot::build_default(builder),
+        EntityKind::Painting => painting::build_default(builder),
+        EntityKind::Panda => panda::build_default(builder),
+        EntityKind::Parrot => parrot::build_default(builder),
+        EntityKind::Phantom => phantom::build_default(builder),
+        EntityKind::Pig => pig::build_default(builder),
+        EntityKind::Piglin => piglin::build_default(builder),
+        EntityKind::PiglinBrute => piglin_brute::build_default(builder),
+        EntityKind::Pillager => pillager::build_default(builder),
+        EntityKind::PolarBear => polar_bear::build_default(builder),
+        EntityKind::Tnt => tnt::build_default(builder),
+        EntityKind::Pufferfish => pufferfish::build_default(builder),
+        EntityKind::Rabbit => rabbit::build_default(builder),
+        EntityKind::Ravager => ravager::build_default(builder),
+        EntityKind::Salmon => salmon::build_default(builder),
+        EntityKind::Sheep => sheep::build_default(builder),
+        EntityKind::Shulker => shulker::build_default(builder),
+        EntityKind::ShulkerBullet => shulker_bullet::build_default(builder),
+        EntityKind::Silverfish => silverfish::build_default(builder),
+        EntityKind::Skeleton => skeleton::build_default(builder),
+        EntityKind::SkeletonHorse => skeleton_horse::build_default(builder),
+        EntityKind::Slime => slime::build_default(builder),
+        EntityKind::SmallFireball => small_fireball::build_default(builder),
+        EntityKind::SnowGolem => snow_golem::build_default(builder),
+        EntityKind::Snowball => snowball::build_default(builder),
+        EntityKind::SpectralArrow => spectral_arrow::build_default(builder),
+        EntityKind::Spider => spider::build_default(builder),
+        EntityKind::Squid => squid::build_default(builder),
+        EntityKind::Stray => stray::build_default(builder),
+        EntityKind::Strider => strider::build_default(builder),
+        EntityKind::Egg => egg::build_default(builder),
+        EntityKind::EnderPearl => ender_pearl::build_default(builder),
+        EntityKind::ExperienceBottle => experience_bottle::build_default(builder),
+        EntityKind::Potion => potion::build_default(builder),
+        EntityKind::Trident => trident::build_default(builder),
+        EntityKind::TraderLlama => trader_llama::build_default(builder),
+        EntityKind::TropicalFish => tropical_fish::build_default(builder),
+        EntityKind::Turtle => turtle::build_default(builder),
+        EntityKind::Vex => vex::build_default(builder),
+        EntityKind::Villager => villager::build_default(builder),
+        EntityKind::Vindicator => vindicator::build_default(builder),
+        EntityKind::WanderingTrader => wandering_trader::build_default(builder),
+        EntityKind::Witch => witch::build_default(builder),
+        EntityKind::Wither => wither::build_default(builder),
+        EntityKind::WitherSkeleton => wither_skeleton::build_default(builder),
+        EntityKind::WitherSkull => wither_skull::build_default(builder),
+        EntityKind::Wolf => wolf::build_default(builder),
+        EntityKind::Zoglin => zoglin::build_default(builder),
+        EntityKind::Zombie => zombie::build_default(builder),
+        EntityKind::ZombieHorse => zombie_horse::build_default(builder),
+        EntityKind::ZombieVillager => zombie_villager::build_default(builder),
+        EntityKind::ZombifiedPiglin => zombified_piglin::build_default(builder),
+        EntityKind::Player => player::build_default(builder),
+        EntityKind::FishingBobber => fishing_bobber::build_default(builder),
+    }
+}

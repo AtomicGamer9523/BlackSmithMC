@@ -1,0 +1,23 @@
+[package]
+name = "feather-protocol"
+version = "0.1.0"
+authors = ["caelunshun <caelunshun@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+aes = "0.7"
+anyhow = "1"
+bytemuck = "1"
+byteorder = "1"
+bytes = "1"
+cfb8 = "0.7"
+either = "1"
+flate2 = "1"
+hematite-nbt = { git = "https://github.com/PistonDevelopers/hematite_nbt" }
+libcraft = { path = "../../libcraft" }
+num-traits = "0.2"
+parking_lot = "0.12" # Arc<RwLock<Chunk>> compat
+quill = { path = "../../quill" }
+serde = "1"
+thiserror = "1"
+uuid = "0.8"

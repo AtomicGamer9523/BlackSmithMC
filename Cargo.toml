@@ -1,0 +1,42 @@
+[workspace]
+members = [
+    # libcraft
+    "libcraft/core",
+    "libcraft/blocks",
+    "libcraft/items",
+    "libcraft/macros",
+    "libcraft/particles",
+    "libcraft/text",
+    "libcraft/inventory",
+    "libcraft/chunk",
+    "libcraft/anvil",
+    "libcraft/generators",
+    "libcraft",
+
+    # Quill
+    "quill",
+
+    # Built-in plugins
+    "builtin-plugins/world-format",
+
+    # Feather
+    "feather/world-format",
+    "feather/utils",
+    "feather/datapacks",
+    "feather/worldgen",
+    "feather/common",
+    "feather/protocol",
+    "feather/server",
+
+    # blacksmithmc
+    "blacksmith/core",
+    "blacksmith/commands",
+    
+    # Other
+    "proxy",
+    "vane",
+]
+
+# No longer need to use release for "development":
+[profile.dev.package."*"]
+opt-level = 0

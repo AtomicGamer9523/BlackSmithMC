@@ -1,0 +1,17 @@
+[package]
+name = "libcraft-core"
+version = "0.1.0"
+authors = ["caelunshun <caelunshun@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+bincode = "2.0.0-rc.1"
+bytemuck = { version = "1", features = ["derive"] }
+derive_more = "0.99"
+num-derive = "0.3"
+num-traits = "0.2"
+serde = { version = "1", features = ["derive"] }
+strum = "0.24"
+strum_macros = "0.24"
+thiserror = "1"
+vek = "0.15"
