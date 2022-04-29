@@ -1,4 +1,5 @@
 use common::Game;
+use libcraft::text::{chat_message_converter};
 use quill::{chat::ChatPreference, ChatBox};
 use vane::{Component, EntityBuilder, SysResult, SystemExecutor};
 
@@ -40,8 +41,8 @@ fn flush_chat_boxes(game: &mut Game, server: &mut Server) -> SysResult {
 fn flush_console_chat_box(game: &mut Game) -> SysResult {
     for (_, (_console, mut mailbox)) in game.ecs.query::<(&Console, &mut ChatBox)>().iter() {
         for message in mailbox.drain() {
-            // TODO: properly display chat message
-            log::info!("{:?}", message.text());
+            let msg = chat_message_converter(message.text().to_owned());
+            log::info!("[\x1b[38;5;99m{:?}\x1b[0m]:[\x1b[38;5;157m{:?}\x1b[0m]", msg.msgtype, msg.content);
         }
     }
 

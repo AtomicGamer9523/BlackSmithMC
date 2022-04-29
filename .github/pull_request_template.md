@@ -2,7 +2,7 @@
 
 ## Status
 
-- [ ] Ready 
+- [ ] Ready
 - [x] Development
 - [ ] Hold
 

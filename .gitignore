@@ -3,6 +3,8 @@
 **/.idea
 **/.vscode
 
+/world
+
 # Cargo build configuration
 .cargo
 

@@ -9,9 +9,9 @@ pub fn init(level: LevelFilter) {
             let level_string = match record.level() {
                 Level::Error => record.level().to_string().red(),
                 Level::Warn => record.level().to_string().yellow(),
-                Level::Info => record.level().to_string().cyan(),
-                Level::Debug => record.level().to_string().purple(),
-                Level::Trace => record.level().to_string().green(),
+                Level::Info => record.level().to_string().magenta(),
+                Level::Debug => record.level().to_string().green(),
+                Level::Trace => record.level().to_string().bright_blue(),
             };
             let target = if !record.target().is_empty() {
                 record.target()
@@ -27,7 +27,7 @@ pub fn init(level: LevelFilter) {
                 "\x1b[38;5;31m{}\x1b[0m {:<5} [\x1b[38;5;86m{}\x1b[0m] {}",
                 datetime
                     .format(format_description!(
-                        "[year]-[month]-[day] [hour]:[minute]:[second],[subsecond digits:3]"
+                        "[day]/[month]/[year] [hour]:[minute]:[second];[subsecond digits:5]"
                     ))
                     .unwrap(),
                 level_string,

@@ -57,7 +57,7 @@ fn handle_packets(game: &mut Game, server: &mut Server) -> SysResult {
 
     for (player, packet) in packets {
         if let Err(e) = crate::packet_handlers::handle_packet(game, server, player, packet) {
-            log::warn!(
+            log::error!(
                 "Failed to handle packet from '{}': {:?}",
                 &**game.ecs.get::<Name>(player)?,
                 e

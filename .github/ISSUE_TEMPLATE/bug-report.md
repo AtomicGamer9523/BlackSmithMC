@@ -35,7 +35,7 @@ labels: 'type: bug'
 
 - Operating System: 
 - Operating System Version: 
-- **Feather** Version: 
+- **BlackSmithMC** Version: 
 
 
 ## Additional Context

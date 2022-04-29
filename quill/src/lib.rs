@@ -1,5 +1,3 @@
-//! Quill, Feather's plugin API.
-
 pub mod chat;
 mod chunk_lock;
 pub mod components;

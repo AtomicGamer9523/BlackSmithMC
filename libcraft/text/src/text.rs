@@ -375,6 +375,36 @@ pub enum TextValue {
     },
 }
 
+pub struct ChatMSG {
+    pub msgtype: Translate,
+    pub content: Vec<Text>
+}
+
+impl ChatMSG {
+    fn empty() -> Self {
+        let msgtype = Translate::Custom(std::borrow::Cow::Borrowed("EMPTY"));
+        let content = vec![Text::empty()];
+        Self { msgtype, content }
+    }
+
+    fn new(msgtype: Translate, content: Vec<Text>) -> Self {
+        Self { msgtype, content }
+    }
+}
+pub fn chat_message_converter(text: Text) -> ChatMSG {
+    let res = IntoTextComponent::into_component(text).get_value().to_owned();
+    match res {
+        TextValue::Text { text:_ } => ChatMSG::empty(),
+        TextValue::Translate { translate, with } => {
+            ChatMSG::new(translate, with)
+        },
+        TextValue::Score { name:_, objective:_, value:_ } => ChatMSG::empty(),
+        TextValue::Selector { selector:_ } => ChatMSG::empty(),
+        TextValue::Keybind { keybind:_ } => ChatMSG::empty(),
+        TextValue::Nbt { nbt:_ } => ChatMSG::empty(),
+    }
+}
+
 impl<T> From<T> for TextValue
 where
     T: Into<Cow<'static, str>>,
@@ -387,6 +417,19 @@ where
 impl TextValue {
     pub fn text<T: Into<Cow<'static, str>>>(text: T) -> Self {
         TextValue::Text { text: text.into() }
+    }
+
+    pub fn get_value<A, B>(translate: A, with: B) -> Self
+    where
+        A: Into<Translate>,
+        B: IntoIterator,
+        B::Item: Into<Text>,
+    {
+        let with = with.into_iter().map(|e| e.into()).collect();
+        TextValue::Translate {
+            translate: translate.into(),
+            with,
+        }
     }
 
     pub fn translate<A>(translate: A) -> Self
@@ -444,7 +487,7 @@ impl TextValue {
 /// Text json object that holds all styles.
 pub struct TextComponent {
     #[serde(flatten)]
-    value: TextValue,
+    pub value: TextValue,
     color: Option<Color>,
     bold: Option<bool>,
     italic: Option<bool>,
@@ -472,6 +515,10 @@ pub trait IntoTextComponent {
 impl TextComponent {
     pub fn empty() -> TextComponent {
         TextComponent::from("")
+    }
+
+    pub fn get_value(&mut self) -> TextValue {
+        return self.value.to_owned()
     }
 }
 
