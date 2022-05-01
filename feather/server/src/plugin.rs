@@ -51,14 +51,14 @@ impl PluginLoader {
             let id = &plugin.info.id;
             let enabled = *self.file.plugins.entry(id.to_string()).or_insert(true);
             if enabled {
-                log::info!("Loading plugin {}", plugin.info.name);
+                log::info!("Loading plugin '{}'", plugin.info.name);
                 plugin
                     .instance
                     .initialize(game)
-                    .with_context(|| format!("failed to initialize plugin {}", plugin.info.name))?;
+                    .with_context(|| format!("failed to initialize plugin '{}'", plugin.info.name))?;
             } else {
                 log::info!(
-                    "Plugin {} is disabled and will not be loaded",
+                    "Plugin '{}' is disabled and will not be loaded",
                     plugin.info.name
                 );
             }

@@ -36,6 +36,9 @@ members = [
     "proxy",
     "vane",
 ]
+exclude = [
+    "plugins"
+]
 
 # No longer need to use release for "development":
 [profile.dev.package."*"]

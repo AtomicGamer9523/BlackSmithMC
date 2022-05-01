@@ -2,7 +2,6 @@
 
 
 
-
 pub struct Command {
     pub name: String,
     pub allowed: bool,
@@ -20,7 +19,7 @@ impl Command {
 
 pub struct Blacksmithcommands {
     pub commands: Vec<Command>,
-    initialized: bool,
+    // initialized: bool,
 }
 
 impl Blacksmithcommands {
