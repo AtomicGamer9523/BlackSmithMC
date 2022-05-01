@@ -41,7 +41,7 @@ impl ServerBuilder {
 
 fn print_systems(systems: &SystemExecutor<Game>) {
     let systems: Vec<&str> = systems.system_names().collect();
-    log::debug!("---SYSTEMS---\n{:#?}\n", systems);
+    log::trace!("---SYSTEMS---\n{:#?}\n", systems);
 }
 
 fn build_tokio_runtime() -> Runtime {

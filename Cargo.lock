@@ -666,6 +666,7 @@ dependencies = [
  "anyhow",
  "base64",
  "base64ct",
+ "blacksmithmc-commands",
  "blacksmithmc-core",
  "colored",
  "const_format",

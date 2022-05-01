@@ -1,5 +1,5 @@
 use common::Game;
-use libcraft::text::{chat_message_converter};
+use libcraft::text::{chat_message_converter, Translate, IntoTextComponent};
 use quill::{chat::ChatPreference, ChatBox};
 use vane::{Component, EntityBuilder, SysResult, SystemExecutor};
 

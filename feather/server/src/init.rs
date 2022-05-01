@@ -69,8 +69,8 @@ fn launch(mut game: Game) -> anyhow::Result<()> {
 
     let tick_loop = create_tick_loop(game);
     log::debug!("Launching the game loop");
-    let mut bsmc = Blacksmith::new();
-    log::info!("{}", bsmc.print());
+    let bsmc = Blacksmith::new();
+    log::info!("BlackSmithMC Active: '{}'", bsmc.status());
     tick_loop.run();
 
     Ok(())

@@ -517,8 +517,8 @@ impl TextComponent {
         TextComponent::from("")
     }
 
-    pub fn get_value(&mut self) -> TextValue {
-        return self.value.to_owned()
+    pub fn get_value(&self) -> &TextValue {
+        &self.value
     }
 }
 

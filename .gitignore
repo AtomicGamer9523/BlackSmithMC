@@ -4,6 +4,7 @@
 **/.vscode
 
 /world
+/test
 
 # Cargo build configuration
 .cargo
