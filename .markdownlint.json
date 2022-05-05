@@ -1,4 +1,7 @@
 {
+    "no-trailing-punctuation": false,
+    "ol-prefix": false,
+    "no-inline-html": false,
     "header-increment": false,
     "line-length": false,
     "no-emphasis-as-heading": false

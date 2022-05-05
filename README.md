@@ -4,7 +4,8 @@ A Minecraft server implementation written in Rust.
 
 ### Status
 
-The project is in an **early stage**. Many, many features are unimplemented. We welcome help from anyone willing to contribute!
+The project is in an **early stage**. Many, many features are unimplemented. We welcome help from anyone willing to contribute!\
+Documentation avaliable [here](./docs/README.md)
 
 ### Supported Minecraft versions
 
