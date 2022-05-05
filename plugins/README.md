@@ -2,8 +2,9 @@
 
 ## Default Plugins:
 
-1. `example` -> Example function, you can use it to make your own
-2. `world-format` -> A **VERY** important plugin, used for the `.bsmc` world file format
+1. `world-format` -> A **VERY** important plugin, used for the `.bsmc` world file format
+2. `website` -> A important plugin, used for the simple webserver listening on port 3000 (443 if 3000 is already used)
+3. `example` -> Example function, you can use it to make your own
 
 <br>
 
