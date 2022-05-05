@@ -1,0 +1,15 @@
+[package]
+name = "website-plugin"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+quill = { path = "../../quill" }
+feather-server = { path = "../../feather/server" }
+anyhow = "1"
+
+
+# rocket = "0.5.0-rc.1"

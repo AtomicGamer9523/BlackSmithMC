@@ -160,3 +160,11 @@ fn create_tick_loop(mut game: Game) -> TickLoop {
         should_shutdown
     })
 }
+
+pub fn server_options() -> anyhow::Result<Config> {
+    let crate::config::ConfigContainer {
+        config,
+        was_config_created,
+    } = crate::config::load(CONFIG_PATH).context("failed to load configuration file")?;
+    Ok(config)
+}

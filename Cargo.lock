@@ -168,6 +168,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "feather-server",
+ "website-plugin",
 ]
 
 [[package]]
@@ -2457,6 +2458,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "44d8de8415c823c8abd270ad483c6feeac771fad964890779f9a8cb24fbbc1bf"
 dependencies = [
  "webpki",
+]
+
+[[package]]
+name = "website-plugin"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "feather-server",
+ "quill",
 ]
 
 [[package]]

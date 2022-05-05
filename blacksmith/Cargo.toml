@@ -8,6 +8,7 @@ anyhow = "1"
 feather-server = { path = "../feather/server", package = "feather-server" }
 #? Uncomment bellow to load example plugin
 #blacksmithmc-example-plugin = { path = "../plugins/example", package = "blacksmithmc-example-plugin" }
+website-plugin = { path = "../plugins/website", package = "website-plugin" }
 
 
 [[bin]]
