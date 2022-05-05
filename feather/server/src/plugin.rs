@@ -33,6 +33,7 @@ impl PluginLoader {
     }
 
     pub fn register_plugin<P: Plugin>(&mut self, plugin: P) {
+        plugin.debug();
         self.plugins.push(RegisteredPlugin::new(plugin));
     }
 
@@ -51,7 +52,6 @@ impl PluginLoader {
             let id = &plugin.info.id;
             let enabled = *self.file.plugins.entry(id.to_string()).or_insert(true);
             if enabled {
-                log::info!("Loading plugin '{}'", plugin.info.name);
                 plugin
                     .instance
                     .initialize(game)
@@ -82,11 +82,11 @@ struct PluginsFile {
     plugins: IndexMap<String, bool>,
 }
 
-struct RegisteredPlugin {
+pub(crate) struct RegisteredPlugin {
     /// The `Plugin` instance associated with the plugin.
     instance: Box<dyn ErasedPlugin>,
     /// The plugin metadata.
-    info: PluginInfo,
+    info: PluginInfo
 }
 
 impl RegisteredPlugin {

@@ -1,3 +1,5 @@
+use time::macros::format_description;
+use time::OffsetDateTime;
 pub mod chat;
 mod chunk_lock;
 pub mod components;
@@ -37,3 +39,19 @@ pub use libcraft::{
 };
 
 pub extern crate libcraft;
+
+pub fn plog(plugin_name: &'static str, data: &'static str){
+    let datetime: OffsetDateTime = match OffsetDateTime::now_local() {
+        Ok(x) => x,
+        Err(_) => OffsetDateTime::now_utc(),
+    };
+    println!("\x1b[38;5;31m{} \x1b[38;5;172mPLUGIN\x1b[0m [\x1b[38;5;86m{}\x1b[0m] {}",
+        datetime
+        .format(format_description!(
+            "[day]/[month]/[year] [hour]:[minute]:[second];[subsecond digits:5]"
+        ))
+        .unwrap(),
+        plugin_name,
+        data
+    );
+}

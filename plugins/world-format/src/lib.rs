@@ -28,6 +28,10 @@ impl Plugin for FeatherWorldFormat {
         }
     }
 
+    fn debug(&self){
+        quill::plog(self.info().name, "Working ;)");
+    }
+
     fn initialize(&mut self, setup: &mut dyn Setup<Self>) -> anyhow::Result<Self::State> {
         let thread_pool = RegionThreadPool::new(
             Shared::new(setup.game().resources().get::<Arc<BiomeList>>()?.clone()),

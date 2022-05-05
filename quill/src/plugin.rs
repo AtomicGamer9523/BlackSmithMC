@@ -38,6 +38,9 @@ pub trait Plugin: 'static {
     /// Gets the plugin's info.
     fn info(&self) -> PluginInfo;
 
+    /// Runs to see if plugin is working
+    fn debug(&self);
+
     /// Called at plugin load time.
     ///
     /// You should register systems and insert resources in this method.
