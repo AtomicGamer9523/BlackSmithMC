@@ -1,0 +1,12 @@
+[package]
+name = "blacksmithmc-example-plugin"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+quill = { path = "../../quill" }
+anyhow = "1"
+toml = "0.5"

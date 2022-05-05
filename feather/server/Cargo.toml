@@ -3,11 +3,6 @@ name = "feather-server"
 version = "0.1.0"
 authors = ["caelunshun <caelunshun@gmail.com>"]
 edition = "2021"
-default-run = "feather-server"
-
-[[bin]]
-path = "src/main.rs"
-name = "feather-server"
 
 [lib]
 path = "src/lib.rs"
@@ -19,8 +14,6 @@ base64 = "0.13"
 base64ct = "1"
 colored = "2"
 common = { path = "../common", package = "feather-common" }
-blacksmithmc-core = { path = "../../blacksmith/core", package = "blacksmithmc-core" }
-blacksmithmc-commands = { path = "../../blacksmith/commands", package = "blacksmithmc-commands" }
 const_format = "0.2.22"
 ctrlc = "3"
 crossbeam-utils = "0.8"
@@ -60,7 +53,7 @@ uuid = "0.8"
 vane = { path = "../../vane" }
 
 # Built-in plugins
-feather-world-format-plugin = { path = "../../builtin-plugins/world-format" }
+feather-world-format-plugin = { path = "../../plugins/world-format" }
 
 [features]
 # Use zlib-ng for faster compression. Requires CMake.

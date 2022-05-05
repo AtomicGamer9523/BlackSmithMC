@@ -1,0 +1,15 @@
+[package]
+name = "blacksmithmc"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+anyhow = "1"
+feather-server = { path = "../feather/server", package = "feather-server" }
+#? Uncomment bellow to load example plugin
+#blacksmithmc-example-plugin = { path = "../plugins/example", package = "blacksmithmc-example-plugin" }
+
+
+[[bin]]
+name = "BlackSmithMC-server"
+path = "src/main.rs"

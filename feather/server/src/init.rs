@@ -1,5 +1,4 @@
 use std::{cell::RefCell, rc::Rc, sync::Arc};
-use blacksmithmc_core::Blacksmith;
 
 use anyhow::{anyhow, bail, Context};
 use quill::world::{WorldDescriptor, WorldSettings};
@@ -69,8 +68,6 @@ fn launch(mut game: Game) -> anyhow::Result<()> {
 
     let tick_loop = create_tick_loop(game);
     log::debug!("Launching the game loop");
-    let bsmc = Blacksmith::new();
-    log::info!("BlackSmithMC Active: '{}'", bsmc.status());
     tick_loop.run();
 
     Ok(())

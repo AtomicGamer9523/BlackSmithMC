@@ -163,14 +163,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "blacksmithmc-commands"
-version = "0.1.0"
-
-[[package]]
-name = "blacksmithmc-core"
+name = "blacksmithmc"
 version = "0.1.0"
 dependencies = [
- "blacksmithmc-commands",
+ "anyhow",
+ "feather-server",
 ]
 
 [[package]]
@@ -666,8 +663,6 @@ dependencies = [
  "anyhow",
  "base64",
  "base64ct",
- "blacksmithmc-commands",
- "blacksmithmc-core",
  "colored",
  "const_format",
  "crossbeam-utils",

@@ -1,6 +1,16 @@
 [workspace]
 members = [
-    # libcraft
+    #! CORE
+    "blacksmith",
+
+    #! PLUGINS
+    #? Example Plugin, uncomment to include
+    #"plugins/example",
+
+
+
+
+    #! OTHER
     "libcraft/core",
     "libcraft/blocks",
     "libcraft/items",
@@ -12,14 +22,8 @@ members = [
     "libcraft/anvil",
     "libcraft/generators",
     "libcraft",
-
-    # Quill
     "quill",
-
-    # Built-in plugins
-    "builtin-plugins/world-format",
-
-    # Feather
+    "plugins/world-format",
     "feather/world-format",
     "feather/utils",
     "feather/datapacks",
@@ -27,19 +31,10 @@ members = [
     "feather/common",
     "feather/protocol",
     "feather/server",
-
-    # blacksmithmc
-    "blacksmith/core",
-    "blacksmith/commands",
-    
-    # Other
     "proxy",
     "vane",
 ]
-exclude = [
-    "plugins"
-]
 
-# No longer need to use release for "development":
-[profile.dev.package."*"]
-opt-level = 0
+default-members = [
+    "blacksmith"
+]
