@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Currently Safe & stable version have square brackets "[]" in [version](https://github.com/AtomicGamer9523/BlackSmithMC/.version) file,
+Currently Safe & stable version have square brackets "[]" in [version](./.version) file,
 if you see curly brackets "{}" that means the version is not stable
 
 | Version | Supported          |

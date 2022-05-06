@@ -1,4 +1,5 @@
 {
+    "first-line-heading": false,
     "no-trailing-punctuation": false,
     "ol-prefix": false,
     "no-inline-html": false,

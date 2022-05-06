@@ -1,5 +1,10 @@
 # BlackSmithMC
 
+[![Download](https://img.shields.io/github/languages/code-size/AtomicGamer9523/BlackSmithMC?label=Download%20Code&logo=DocuSign&logoColor=blue)](https://github.com/AtomicGamer9523/BlackSmithMC/archive/refs/heads/master.zip)
+[![Rust](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust.yml/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust.yml)
+[![pages-build-deployment](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/pages/pages-build-deployment)
+[![rust-clippy analyze](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust-clippy.yml/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust-clippy.yml)
+
 A Minecraft server implementation written in Rust.
 
 ### Status
