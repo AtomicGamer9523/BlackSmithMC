@@ -1,6 +1,7 @@
 # BlackSmithMC
 
-[![Download](https://img.shields.io/github/languages/code-size/AtomicGamer9523/BlackSmithMC?label=Download%20Code&logo=DocuSign&logoColor=blue)](https://github.com/AtomicGamer9523/BlackSmithMC/archive/refs/heads/master.zip)
+[![Download](https://img.shields.io/github/languages/code-size/AtomicGamer9523/BlackSmithMC?label=Download%20Code&logo=DocuSign&logoColor=blue)](https://codeload.github.com/AtomicGamer9523/BlackSmithMC/zip/refs/heads/master)
+[![Download](https://img.shields.io/badge/Download%20Build-6.84%20MB-blue?logo=DocuSign&logoColor=blue)](https://atomicgamer9523.github.io/BlackSmithMC/build/)
 [![Rust](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust.yml/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust.yml)
 [![pages-build-deployment](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/pages/pages-build-deployment)
 [![rust-clippy analyze](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust-clippy.yml/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust-clippy.yml)
