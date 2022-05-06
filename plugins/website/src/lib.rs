@@ -1,6 +1,5 @@
 use std::net::{TcpListener, SocketAddr};
 use quill::{Plugin, PluginInfo, Setup};
-use feather_server::config;
 use std::io::prelude::*;
 use std::net::TcpStream;
 use std::time::Duration;
@@ -25,8 +24,8 @@ impl Plugin for WebsitePlugin {
         quill::plog(self.info().name, "Website Up");
     }
 
-    fn initialize(&mut self, setup: &mut dyn Setup<Self>) -> anyhow::Result<Self::State> {
-        let options = getConfig().unwrap();
+    fn initialize(&mut self, _setup: &mut dyn Setup<Self>) -> anyhow::Result<Self::State> {
+        let options = get_config().unwrap();
         let addrs = [
             SocketAddr::new(options.network.address, 3000),
             SocketAddr::from(([0, 0, 0, 0], 443)),
@@ -47,7 +46,7 @@ impl Plugin for WebsitePlugin {
         Ok(())
     }
 }
-fn getConfig() -> Option<feather_server::config::Config> {
+fn get_config() -> Option<feather_server::config::Config> {
     let config = feather_server::init::server_options();
     match config {
         Ok(data) => Some(data),

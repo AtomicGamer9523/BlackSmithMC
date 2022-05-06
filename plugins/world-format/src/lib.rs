@@ -1,5 +1,3 @@
-//! Plugin providing a `WorldSource` that uses the Feather world format.
-
 use std::{cell::RefCell, path::PathBuf, rc::Rc, sync::Arc, time::Duration};
 
 use anyhow::Context;

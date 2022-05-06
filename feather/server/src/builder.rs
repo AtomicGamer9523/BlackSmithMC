@@ -1,8 +1,8 @@
-use common::Game;
 use feather_world_format_plugin::FeatherWorldFormat;
-use quill::Plugin;
 use tokio::runtime::Runtime;
 use vane::SystemExecutor;
+use quill::Plugin;
+use common::Game;
 
 use crate::plugin::PluginLoader;
 

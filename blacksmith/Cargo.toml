@@ -6,11 +6,11 @@ edition = "2018"
 [dependencies]
 anyhow = "1"
 feather-server = { path = "../feather/server", package = "feather-server" }
+website-plugin = { path = "../plugins/website",package = "website-plugin" }    
 #? Uncomment bellow to load example plugin
 #blacksmithmc-example-plugin = { path = "../plugins/example", package = "blacksmithmc-example-plugin" }
-website-plugin = { path = "../plugins/website", package = "website-plugin" }
 
 
 [[bin]]
-name = "BlackSmithMC-server"
+name = "black_smith_mc_server"
 path = "src/main.rs"

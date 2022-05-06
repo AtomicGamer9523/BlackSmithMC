@@ -164,7 +164,7 @@ fn create_tick_loop(mut game: Game) -> TickLoop {
 pub fn server_options() -> anyhow::Result<Config> {
     let crate::config::ConfigContainer {
         config,
-        was_config_created,
+        was_config_created : _,
     } = crate::config::load(CONFIG_PATH).context("failed to load configuration file")?;
     Ok(config)
 }
