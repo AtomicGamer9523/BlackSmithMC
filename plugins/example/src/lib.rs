@@ -1,4 +1,4 @@
-use quill::{Plugin, PluginInfo, Setup};
+use quill::{Plugin, PluginInfo, Setup, PluginLogger};
 
 pub struct BlackSmithExamplePlugin;
 
@@ -15,10 +15,11 @@ impl Plugin for BlackSmithExamplePlugin {
     }
 
     fn debug(&self){
-        quill::plog(self.info().name, "Working ;)");
+        PluginLogger::debug(self.info().name, "Working ;)".to_string());
     }
 
     fn initialize(&mut self, setup: &mut dyn Setup<Self>) -> anyhow::Result<Self::State> {
+        PluginLogger::info(self.info().name, "I have been Initialized".to_string());
         Ok(())
     }
 }

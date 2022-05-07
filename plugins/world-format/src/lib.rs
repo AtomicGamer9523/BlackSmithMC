@@ -8,7 +8,7 @@ use quill::{
         ChunkLoadError, ChunkLoadResult, ChunkSaveError, ChunkSaveResult, ChunkSaved, StoredChunk,
         WorldSource, WorldSourceFactory,
     },
-    ChunkLock, ChunkPosition, Game, Plugin, PluginInfo, Setup, WorldId,
+    ChunkLock, ChunkPosition, Game, Plugin, PluginInfo, Setup, WorldId, PluginLogger
 };
 use threadpool::{RegionKey, RegionThreadPool, Shared, WorldInfo};
 
@@ -27,7 +27,7 @@ impl Plugin for FeatherWorldFormat {
     }
 
     fn debug(&self){
-        quill::plog(self.info().name, "Working ;)");
+        PluginLogger::debug(self.info().name, "Working ;)".to_string());
     }
 
     fn initialize(&mut self, setup: &mut dyn Setup<Self>) -> anyhow::Result<Self::State> {

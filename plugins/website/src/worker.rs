@@ -1,3 +1,4 @@
+use quill::{PluginLogger};
 use std::sync::mpsc;
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -16,13 +17,6 @@ enum Message {
 }
 
 impl ThreadPool {
-    /// Create a new ThreadPool.
-    ///
-    /// The size is the number of threads in the pool.
-    ///
-    /// # Panics
-    ///
-    /// The `new` function will panic if the size is zero.
     pub fn new(size: usize) -> ThreadPool {
         assert!(size > 0);
 
@@ -51,16 +45,15 @@ impl ThreadPool {
 
 impl Drop for ThreadPool {
     fn drop(&mut self) {
-        println!("Sending terminate message to all workers.");
+        PluginLogger::info("WebsitePlugin", "Sending terminate message to all workers.".to_string());
 
         for _ in &self.workers {
             self.sender.send(Message::Terminate).unwrap();
         }
-
-        println!("Shutting down all workers.");
+        PluginLogger::info("WebsitePlugin", "Shutting down all workers.".to_string());
 
         for worker in &mut self.workers {
-            println!("Shutting down worker {}", worker.id);
+            PluginLogger::info("WebsitePlugin", format!("Shutting down worker {}", worker.id));
 
             if let Some(thread) = worker.thread.take() {
                 thread.join().unwrap();
@@ -81,12 +74,12 @@ impl Worker {
 
             match message {
                 Message::NewJob(job) => {
-                    println!("Worker {} got a job; executing.", id);
+                    PluginLogger::info("WebsitePlugin", format!("Worker {} got a job; executing.", id));
 
                     job();
                 }
                 Message::Terminate => {
-                    println!("Worker {} was told to terminate.", id);
+                    PluginLogger::info("WebsitePlugin", format!("Worker {} was told to terminate.", id));
 
                     break;
                 }

@@ -1,5 +1,5 @@
 use std::net::{TcpListener, SocketAddr};
-use quill::{Plugin, PluginInfo, Setup};
+use quill::{Plugin, PluginInfo, Setup, PluginLogger};
 use std::io::prelude::*;
 use std::net::TcpStream;
 use std::time::Duration;
@@ -21,7 +21,7 @@ impl Plugin for WebsitePlugin {
     }
 
     fn debug(&self){
-        quill::plog(self.info().name, "Website Up");
+        PluginLogger::debug(self.info().name, "Website Up".to_string());
     }
 
     fn initialize(&mut self, _setup: &mut dyn Setup<Self>) -> anyhow::Result<Self::State> {
@@ -40,8 +40,7 @@ impl Plugin for WebsitePlugin {
                 handle_connection(stream);
             });
         }
-    
-        println!("Shutting down.");
+        PluginLogger::info(self.info().name, "Shutting down.".to_string());
 
         Ok(())
     }

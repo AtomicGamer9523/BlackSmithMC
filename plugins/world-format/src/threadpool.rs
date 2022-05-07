@@ -14,7 +14,7 @@ use flume::{Receiver, RecvTimeoutError, Sender};
 use parking_lot::RwLock;
 use quill::{
     libcraft::{biome::BiomeList, RegionPosition, Sections},
-    WorldId,
+    WorldId, PluginLogger
 };
 
 struct ThreadHandle {
@@ -149,7 +149,7 @@ impl WorkerThread {
 
     pub fn run(mut self, receiver: Receiver<Task>) {
         let mut next_flush = Instant::now() + FLUSH_INTERVAL;
-        log::debug!("Region worker thread started");
+        PluginLogger::debug("BSMCWorldFormat", "Region worker thread started".to_string());
         loop {
             match receiver.recv_deadline(next_flush) {
                 Ok(task) => self.do_task(task),
@@ -158,7 +158,7 @@ impl WorkerThread {
                     next_flush = Instant::now() + FLUSH_INTERVAL;
                 }
                 Err(RecvTimeoutError::Disconnected) => {
-                    log::debug!("Region worker thread shutting down");
+                    PluginLogger::debug("BSMCWorldFormat", "Region worker thread shutting down".to_string());
                     return;
                 }
             }
@@ -173,7 +173,7 @@ impl WorkerThread {
         let mut region = match self.open_regions.entry(task.key) {
             Entry::Occupied(e) => Ok(e.into_mut()),
             Entry::Vacant(v) => {
-                log::debug!("Opening region with key {:?}", v.key());
+                PluginLogger::debug("BSMCWorldFormat", format!("Opening region with key {:?}", v.key()));
                 let worlds = self.shared.worlds.read();
                 let world = worlds
                     .get(&v.key().world)
@@ -208,11 +208,11 @@ impl WorkerThread {
             .retain(|_, region| now - region.last_used < REGION_CACHE_TIME);
         if initial_len != self.open_regions.len() {
             let closed = initial_len - self.open_regions.len();
-            log::debug!(
+            PluginLogger::debug("BSMCWorldFormat", format!(
                 "Closed {} region files ({} left open on this thread)",
                 closed,
                 self.open_regions.len()
-            );
+            ));
         }
     }
 }

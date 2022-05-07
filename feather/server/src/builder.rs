@@ -3,6 +3,7 @@ use tokio::runtime::Runtime;
 use vane::SystemExecutor;
 use quill::Plugin;
 use common::Game;
+use reqwest;
 
 use crate::plugin::PluginLoader;
 
@@ -16,6 +17,11 @@ impl ServerBuilder {
         let runtime = build_tokio_runtime();
         let game = crate::init::create_game(runtime)?;
         let plugin_loader = PluginLoader::new("plugins.toml")?;
+
+        let body = reqwest::blocking::get("https://raw.githubusercontent.com/AtomicGamer9523/BlackSmithMC/master/.version")?.text()?;
+        if body != "1.3.7[1.18.1]" {
+            log::error!("You are using an outdated version of BlackSmithMC, consider upgrading soon");
+        }
 
         Ok(Self {
             game,

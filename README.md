@@ -18,24 +18,6 @@ Documentation avaliable [here](./docs/README.md)
 BlackSmithMC supports 1.18.1 clients. We do not currently have plans to support multiple versions at once, but
 we may consider this in the future.
 
-### Goals
-
-The BlackSmithMC project aims to provide a Minecraft server that is _fast_, _modular_, and paired with an ergonomic plugin API.
-
-Our mid-term goal is to make BlackSmithMC usable on hub and minigame servers. The limited set of gameplay features available in BlackSmithMC is not a problem for such servers that require a small subset of vanilla functionality. On the other hand, BlackSmithMC's modularity and performance lends itself to these types of servers. Therefore, our current focus is
-on building a rich plugin API to enable these use cases.
-
-In the long term, BlackSmithMC could be used on larger, more survival-like servers, where its performance should allow many players to simultaneously play on the same world requiring very few resources.
-
-### Ecosystem
-
-The BlackSmithMC ecosystem consists of several repositories:
-
-* [`libcraft`](https://github.com/feather-rs/feather/tree/main/libcraft), a set of Rust crates providing Minecraft functionality.
-* [`quill`](https://github.com/feather-rs/feather/tree/main/quill), our work-in-progress plugin API. Quill plugins are written in Rust and compiled to WebAssembly. BlackSmithMC runs them in a sandboxed WebAssembly VM.
-* [`feather`](https://github.com/feather-rs/feather/tree/main/feather), the so called "heart" of the project
-* [`BlackSmithMC`](./blacksmith/), the server software built on top of all of them.
-
 ### Performance
 
 Comparisons to vanilla performance _will_ be extremely misleading, because BlackSmithMC implements so few features. But if you really want them:

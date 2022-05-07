@@ -33,7 +33,6 @@ impl PluginLoader {
     }
 
     pub fn register_plugin<P: Plugin>(&mut self, plugin: P) {
-        plugin.debug();
         self.plugins.push(RegisteredPlugin::new(plugin));
     }
 
@@ -52,6 +51,7 @@ impl PluginLoader {
             let id = &plugin.info.id;
             let enabled = *self.file.plugins.entry(id.to_string()).or_insert(true);
             if enabled {
+                log::info!("Plugin '{}' will be loaded", plugin.info.name);
                 plugin
                     .instance
                     .initialize(game)
@@ -108,6 +108,7 @@ where
     P: Plugin,
 {
     fn initialize(&mut self, game: &mut Game) -> SysResult {
+        self.debug();
         let mut setup = Setup { game };
         let plugin_state = <P as Plugin>::initialize(self, &mut setup)?;
         game.insert_resource(plugin_state);
