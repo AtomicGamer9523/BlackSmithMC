@@ -56,7 +56,7 @@ you care about unless they have been backed up.
 If you are on another platform, compile the server yourself to try it out:
 
 ```bash
-git clone https://github.com/BlackSmithMC-rs/BlackSmithMC
+git clone https://github.com/AtomicGamer9523/BlackSmithMC
 cd BlackSmithMC
 cargo build --release
 ```

@@ -32,7 +32,7 @@ use crate::{connection_worker::Worker, favicon::Favicon};
 
 use self::proxy::ProxyData;
 
-const SERVER_NAME: &str = concatcp!("Feather ", VERSION_STRING);
+const SERVER_NAME: &str = concatcp!("BlackSmithMC ", VERSION_STRING);
 
 mod proxy;
 
@@ -71,7 +71,18 @@ pub async fn handle(worker: &mut Worker) -> anyhow::Result<InitialHandling> {
                 worker
                     .write(ServerLoginPacket::DisconnectLogin(DisconnectLogin {
                         reason: Text::from(
-                            "Invalid protocol! The server is running on version 1.16!",
+                            "Please consider updating to §31.18.1§r",
+                        )
+                        .to_string(),
+                    }))
+                    .await
+                    .ok();
+                return Ok(InitialHandling::Disconnect);
+            } else if handshake.protocol_version > PROTOCOL_VERSION {
+                worker
+                    .write(ServerLoginPacket::DisconnectLogin(DisconnectLogin {
+                        reason: Text::from(
+                            "This server is still on §31.18.1§r",
                         )
                         .to_string(),
                     }))

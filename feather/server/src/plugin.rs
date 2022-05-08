@@ -23,6 +23,7 @@ impl PluginLoader {
         let file = if plugins_file_path.exists() {
             toml::from_slice(&fs::read(plugins_file_path)?).context("malformed `plugins.toml`")?
         } else {
+            fs::write(plugins_file_path, "[plugins]\nwebsite = false\nbsmc_world_format = true");
             PluginsFile::default()
         };
         Ok(Self {
