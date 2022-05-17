@@ -23,7 +23,6 @@ impl PluginLoader {
         let file = if plugins_file_path.exists() {
             toml::from_slice(&fs::read(plugins_file_path)?).context("malformed `plugins.toml`")?
         } else {
-            fs::write(plugins_file_path, "[plugins]\nwebsite = false\nbsmc_world_format = true");
             PluginsFile::default()
         };
         Ok(Self {
@@ -41,16 +40,16 @@ impl PluginLoader {
         self.initialize_plugins(game)?;
         self.warn_for_unknown_plugins();
 
-        // Rewrite the plugins.toml file, since its contents may have been updated
         let new_plugins_file = toml::to_string_pretty(&self.file)?;
-        fs::write(&self.file_path, new_plugins_file.as_bytes())?;
+        log::trace!("Plugins path: '{:?}', Plugins: '{:?}'", &self.file_path, new_plugins_file);
+        fs::write(&self.file_path, &new_plugins_file)?;
         Ok(())
     }
 
     fn initialize_plugins(&mut self, game: &mut Game) -> anyhow::Result<()> {
         for plugin in &mut self.plugins {
             let id = &plugin.info.id;
-            let enabled = *self.file.plugins.entry(id.to_string()).or_insert(true);
+            let enabled = *self.file.plugins.entry(id.to_string()).or_insert(false);
             if enabled {
                 log::info!("Plugin '{}' will be loaded", plugin.info.name);
                 plugin

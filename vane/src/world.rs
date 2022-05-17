@@ -37,7 +37,7 @@ pub struct EntityDead;
 /// The entity-component data structure.
 ///
 /// An `Entities` stores _components_ for _entities_.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Entities {
     components: Components,
     entity_ids: EntityIds,

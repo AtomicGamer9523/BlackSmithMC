@@ -20,6 +20,7 @@ use super::{blob_array::BlobArray, component_vec::ComponentVec};
 static EMPTY: Lazy<ThreadLocal<SparseSetStorage>> = Lazy::new(ThreadLocal::new);
 
 /// Stores components in a sparse set.
+#[derive(Clone)]
 pub struct SparseSetStorage {
     // Data structure invariant: if `dense[sparse[i]] == i`,
     // then the storage contains a component for the entity with index `i`,

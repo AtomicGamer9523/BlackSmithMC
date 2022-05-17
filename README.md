@@ -1,5 +1,7 @@
 # BlackSmithMC
 
+## **WARNING, CURRENT CODE VERSION NOT STABLE, USE [./build](./build/README.md) INSTEAD**
+
 [![Download](https://img.shields.io/github/languages/code-size/AtomicGamer9523/BlackSmithMC?label=Download%20Code&logo=DocuSign&logoColor=blue)](https://codeload.github.com/AtomicGamer9523/BlackSmithMC/zip/refs/heads/master)
 [![Download](https://img.shields.io/badge/Download%20Build-6.84%20MB-blue?logo=DocuSign&logoColor=blue)](https://atomicgamer9523.github.io/BlackSmithMC/build/)
 [![Rust](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust.yml/badge.svg)](https://github.com/AtomicGamer9523/BlackSmithMC/actions/workflows/rust.yml)

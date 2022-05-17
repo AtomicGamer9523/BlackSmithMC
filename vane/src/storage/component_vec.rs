@@ -19,6 +19,7 @@ use super::blob_array::BlobArray;
 /// 1. Values have a stable location in memory: regrowth does not move data.
 /// 2. Pushing is `O(1)` in the worst case. On the other hand,
 /// if we allowed for regrowth, the worst case would be `O(n)`.
+#[derive(Clone)]
 pub struct ComponentVec {
     arrays: ArrayVec<BlobArray, MAX_NUM_ARRAYS>,
     component_meta: ComponentMeta,

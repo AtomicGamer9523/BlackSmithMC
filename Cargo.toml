@@ -34,9 +34,6 @@ members = [
     "proxy",
     "vane",
 ]
-exclude = [
-    "script"
-]
 default-members = [
     "blacksmith"
 ]

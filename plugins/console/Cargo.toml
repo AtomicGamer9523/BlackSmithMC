@@ -1,0 +1,15 @@
+[package]
+name = "console-plugin"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies]
+feather-common = { path = "../../feather/common" }
+libcraft = { path = "../../libcraft" }
+quill = { path = "../../quill" }
+vane = { path = "../../vane" }
+anyhow = "1"
+toml = "0.5"

@@ -167,9 +167,12 @@ name = "blacksmithmc"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "feather-common",
  "feather-server",
+ "libcraft",
+ "plugins",
+ "quill",
  "tokio",
- "website-plugin",
 ]
 
 [[package]]
@@ -375,6 +378,18 @@ dependencies = [
  "atty",
  "lazy_static",
  "winapi",
+]
+
+[[package]]
+name = "console-plugin"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "feather-common",
+ "libcraft",
+ "quill",
+ "toml",
+ "vane",
 ]
 
 [[package]]
@@ -1813,6 +1828,14 @@ name = "pkg-config"
 version = "0.3.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1df8c4ec4b0627e53bdf214615ad287367e482558cf84b109250b37464dc03ae"
+
+[[package]]
+name = "plugins"
+version = "0.1.0"
+dependencies = [
+ "console-plugin",
+ "website-plugin",
+]
 
 [[package]]
 name = "ppv-lite86"

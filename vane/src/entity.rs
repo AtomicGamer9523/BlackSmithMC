@@ -36,7 +36,7 @@ pub struct GenerationMismatch;
 
 /// Allocator for entity IDs. Maintains generations
 /// and indices.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub(crate) struct EntityIds {
     free_indices: Vec<u32>,
     next_index: u32,

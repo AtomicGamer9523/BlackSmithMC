@@ -5,10 +5,12 @@ use quill::Plugin;
 use common::Game;
 use reqwest;
 
+const SERVER_VERSION: &'static str = "1.3.8[1.18.1]";
+
 use crate::plugin::PluginLoader;
 
 pub struct ServerBuilder {
-    game: Game,
+    pub game: Game,
     plugin_loader: PluginLoader,
 }
 
@@ -19,7 +21,7 @@ impl ServerBuilder {
         let plugin_loader = PluginLoader::new("plugins.toml")?;
 
         let body = reqwest::blocking::get("https://raw.githubusercontent.com/AtomicGamer9523/BlackSmithMC/master/.version")?.text()?;
-        if body != "1.3.7[1.18.1]" {
+        if body != SERVER_VERSION {
             log::error!("You are using an outdated version of BlackSmithMC, consider upgrading soon");
         }
 

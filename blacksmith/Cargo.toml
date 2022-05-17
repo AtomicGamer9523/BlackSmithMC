@@ -7,9 +7,10 @@ edition = "2018"
 anyhow = "1"
 tokio = { version = "1", features = ["full"] }
 feather-server = { path = "../feather/server", package = "feather-server" }
-website-plugin = { path = "../plugins/website",package = "website-plugin" }    
-#? Uncomment bellow to load example plugin
-#blacksmithmc-example-plugin = { path = "../plugins/example", package = "blacksmithmc-example-plugin" }
+feather-common = { path = "../feather/common" }
+libcraft = { path = "../libcraft" }
+quill = { path = "../quill" }
+plugins = { path = "../plugins" }
 
 
 [[bin]]

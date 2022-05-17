@@ -8,7 +8,7 @@ use std::{
 ///
 /// Supports either one mutable reference or up to 254 shared references.
 /// Exceeding either limit results in `BorrowError`.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct BorrowFlag {
     flag: Cell<u8>,
 }

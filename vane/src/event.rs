@@ -24,7 +24,7 @@ fn event_remove_fn(world: &mut Entities, event_entity: Entity) {
 /// the event through a query.
 /// 3. Immediately before the triggering system runs again,
 /// the event is removed from the entity.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct EventTracker {
     /// Events to remove from entities.
     ///

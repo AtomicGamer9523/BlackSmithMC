@@ -58,7 +58,6 @@ impl PluginLogger {
             data
         );
     }
-
     pub fn debug(plugin_name: &'static str, data: String){
         let datetime: OffsetDateTime = match OffsetDateTime::now_local() {
             Ok(x) => x,

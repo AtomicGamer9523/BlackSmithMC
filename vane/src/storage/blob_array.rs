@@ -18,6 +18,7 @@ pub struct Full;
 ///
 /// Does not support resizing. Values have a fixed location in memory
 /// unless `swap_remove` is called.
+#[derive(Clone)]
 pub struct BlobArray {
     /// Layout of the values stored in the blob vector.
     item_layout: Layout,

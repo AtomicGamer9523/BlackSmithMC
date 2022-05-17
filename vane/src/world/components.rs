@@ -10,7 +10,7 @@ use crate::{
 /// entities.
 ///
 /// Operates on entity indices but does not account for generations.
-#[derive(Default)]
+#[derive(Default, Clone)]
 pub struct Components {
     storages: AHashMap<TypeId, SparseSetStorage>,
 }
